@@ -86,3 +86,7 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 # Add a home bin directory to PATH
 export PATH="$PATH:$HOME/.bin"
+
+# Tmuxinator Config
+export EDITOR='vim'
+export DISABLE_AUTO_TITLE=true

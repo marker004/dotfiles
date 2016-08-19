@@ -8,9 +8,10 @@ brew 'rcm'
 brew 'tmux'
 brew 'reattach-to-user-namespace'
 
-# vim
-brew 'macvim' 
-brew 'ag'
 
 tap 'caskroom/cask'
 cask 'iterm2'
+
+# vim
+brew 'ag'
+cask 'macvim' --override-system-vim

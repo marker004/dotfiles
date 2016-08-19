@@ -83,3 +83,6 @@ alias ls="ls -al"
 alias chrome="open -a 'Google Chrome'"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+# Add a home bin directory to PATH
+export PATH="$PATH:$HOME/.bin"

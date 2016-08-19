@@ -8,9 +8,6 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-bundler'
-Plugin 'tpope/vim-rake'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-sensible'
@@ -24,7 +21,6 @@ Plugin 'rking/ag.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'moll/vim-bbye'
 Plugin 'flazz/vim-colorschemes'
-Plugin 'rodjek/vim-puppet'
 Plugin 'vim-scripts/EnhCommentify.vim'
 Plugin 'vim-scripts/vim-coffee-script'
 Plugin 'tommcdo/vim-exchange'

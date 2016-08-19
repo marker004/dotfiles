@@ -24,7 +24,7 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'vim-scripts/EnhCommentify.vim'
 Plugin 'vim-scripts/vim-coffee-script'
 Plugin 'tommcdo/vim-exchange'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
 
 call vundle#end()

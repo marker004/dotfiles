@@ -1,0 +1,21 @@
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
+[user]
+	name = Mark Reckard
+	email = mark@milesherndon.com
+	username = marker004
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true
+[alias]
+	gst = status
+	gc = commit
+	gpush = git push origin master
+	gpull = git pull origin master
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true

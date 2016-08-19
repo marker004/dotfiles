@@ -9,7 +9,7 @@ brew 'tmux'
 brew 'reattach-to-user-namespace'
 
 # vim
-brew 'macvim' --override-system-vim
+brew 'macvim' 
 brew 'ag'
 
 tap 'caskroom/cask'

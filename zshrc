@@ -6,8 +6,9 @@ export ZSH=/Users/redwallimac1/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="junkfood"
+ZSH_THEME="agnoster"
 
+DEFAULT_USER=`whoami`
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -81,7 +82,11 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ls="ls -al"
 alias chrome="open -a 'Google Chrome'"
-
+alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
+alias spp="spotify play"
+alias sps="spotify pause"
+alias ip="ipconfig getifaddr en0"
+alias refrezsh="source ~/.zshrc"
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 # Add a home bin directory to PATH

@@ -26,7 +26,11 @@ Plugin 'vim-scripts/vim-coffee-script'
 Plugin 'tommcdo/vim-exchange'
 "Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
-
+Plugin 'lumiliet/vim-twig'
+Plugin 'mattn/emmet-vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+"
 call vundle#end()
 " --- END Vundle Config ---
 
@@ -179,11 +183,16 @@ nmap <C-x> <Plug>Traditional
 vmap <C-x> <Plug>VisualTraditional
 let g:EnhCommentifyRespectIndent = 'Yes'
 let g:EnhCommentifyUseBlockIndent = 'Yes'
+"tabs shit
+let g:airline#extensions#tabline#enabled = 1
+map <left> :bprevious<CR>
+map <right> :bnext<CR>
 
 let g:syntastic_ruby_checkers = ['mri']
 let g:ycm_register_as_syntastic_checker = 0
 let g:ycm_disable_for_files_larger_than_kb = 500
-
+" Open NERD Tree
+map <F10> :NERDTreeToggle<CR>
 " Prefer vertical splits when diffing
 set diffopt+=vertical
 

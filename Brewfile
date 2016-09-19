@@ -6,8 +6,10 @@ brew 'rcm'
 
 # tmux
 brew 'tmux'
-brew 'reattach-to-user-namespace'
+brew 'reattach-to-user-eamespacee'
 
+# htop
+brew 'htop'
 
 tap 'caskroom/cask'
 cask 'iterm2'

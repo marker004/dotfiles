@@ -85,8 +85,17 @@ alias chrome="open -a 'Google Chrome'"
 alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
 alias spp="spotify play"
 alias sps="spotify pause"
+alias spst="spotify status"
 alias ip="ipconfig getifaddr en0"
 alias refrezsh="source ~/.zshrc"
+alias zshrc="vim ~/.dotfiles/zshrc"
+alias filetree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e 's/-/|/'"
+alias ql="qlmanage -p"
+# alias mhserver="cd && umount /Volumes/MilesHerndonNAS && mkdir /Volumes/MilesHerndonNAS && mount_afp 'afp://mark:r3dw4LL93!@server.milesdesign.com/MilesHerndon' /Volumes/MilesHerndonNAS/ && cd /Volumes/MilesherndonNAS/Client/MILES"
+alias mhserver="source ~/.dotfiles/scripts/scripts.sh"
+alias build="grunt build"
+alias gamsg="gaa && gcmsg"
+
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 # Add a home bin directory to PATH

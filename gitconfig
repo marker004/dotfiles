@@ -4,7 +4,7 @@
   smudge = git media smudge %f
 [user]
   name = Mark Reckard
-  email = mark@milesherndon.com
+	email = mark.reckard@gmail.com
   username = marker004
 [filter "hawser"]
   clean = git hawser clean %f

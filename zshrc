@@ -80,12 +80,13 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias ls="ls -al"
+# alias ls="ls -al"
 alias chrome="open -a 'Google Chrome'"
 alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
 alias spp="spotify play"
 alias sps="spotify pause"
 alias spst="spotify status"
+alias publicip="curl ipinfo.io/ip"
 alias ip="ipconfig getifaddr en0"
 alias refrezsh="source ~/.zshrc"
 alias zshrc="vim ~/.dotfiles/zshrc"
@@ -95,6 +96,22 @@ alias ql="qlmanage -p"
 alias mhserver="source ~/.dotfiles/scripts/scripts.sh"
 alias build="grunt build"
 alias gamsg="gaa && gcmsg"
+alias pi="ssh pi@192.168.1.14"
+alias pidrive="ssh pi@192.168.1.14 -t \"cd /mnt ; /bin/zsh\""
+alias size="du -sh"
+alias numfiles="find .//. ! -name . -print | grep -c //"
+alias weather="curl -4 wttr.in/"
+alias desktop="cd ~/Desktop"
+alias sites="cd ~/Sites"
+alias apps="cd ~/apps"
+alias dsstore="find . -name '.DS_Store' -type f -delete"
+alias crickets="afplay ~/Documents/crickets.mp3"
+#function pisync(){
+ # rsync -chavzP --append --stats $1 pi@192.168.1.14:"/mnt/miles/$2"
+#}
+pisync() {
+  rsync -chavzP --append --stats $1 pi@192.168.1.14:"/mnt/miles/$2"
+}
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 

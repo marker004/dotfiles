@@ -6,7 +6,7 @@ brew 'rcm'
 
 # tmux
 brew 'tmux'
-brew 'reattach-to-user-eamespacee'
+brew 'reattach-to-user-namespace'
 
 # htop
 brew 'htop'
@@ -16,4 +16,4 @@ cask 'iterm2'
 
 # vim
 brew 'ag'
-cask 'macvim' --override-system-vim
+brew cask 'macvim' --with-override-system-vim 

@@ -9,7 +9,7 @@ export WP_CLI_PHP="/Applications/MAMP/bin/php/php5.5.14/bin/php:$PATH"
 export PATH=$PATH:/Applications/MAMP/Library/bin
 export PATH=$PATH:$HOME//.meteor
 
-export NVM_DIR="/Users/redwallimac1/.nvm"
+export NVM_DIR="/Users/mark/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

@@ -106,11 +106,12 @@ alias sites="cd ~/Sites"
 alias apps="cd ~/apps"
 alias dsstore="find . -name '.DS_Store' -type f -delete"
 alias crickets="afplay ~/Documents/crickets.mp3"
+alias bigdump="currentdir=`pwd` && cd ~/Desktop && curl http://www.ozerov.de/bigdump/files/2015/04/bigdump.zip --output bigdump.zip && cd currentdir"
 #function pisync(){
  # rsync -chavzP --append --stats $1 pi@192.168.1.14:"/mnt/miles/$2"
 #}
 pisync() {
-  rsync -chavzP --append --stats $1 pi@192.168.1.14:"/mnt/miles/$2"
+  rsync -chavzP --append --stats $1 pi@192.168.1.14:"/mnt/media/$2"
 }
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
@@ -121,3 +122,7 @@ export PATH="$PATH:$HOME/.bin"
 # Tmuxinator Config
 export EDITOR='vim'
 export DISABLE_AUTO_TITLE=true
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

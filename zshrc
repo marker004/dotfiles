@@ -47,9 +47,9 @@ DEFAULT_USER=`whoami`
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(wp-cli git)
 
-# User configuration
+#  User configuration
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/mysql/bin:/$HOME/.meteor"
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -96,24 +96,27 @@ alias ql="qlmanage -p"
 alias mhserver="source ~/.dotfiles/scripts/scripts.sh"
 alias build="grunt build"
 alias gamsg="gaa && gcmsg"
-alias pi="ssh pi@192.168.1.14"
-alias pidrive="ssh pi@192.168.1.14 -t \"cd /mnt ; /bin/zsh\""
+alias pi="ssh pi@192.168.0.27"
+alias pidrive="ssh pi@192.168.0.27 -t \"cd /mnt ; /bin/zsh\""
 alias size="du -sh"
 alias numfiles="find .//. ! -name . -print | grep -c //"
 alias weather="curl -4 wttr.in/"
 alias desktop="cd ~/Desktop"
 alias sites="cd ~/Sites"
 alias apps="cd ~/apps"
+alias q='cd ~/Quantifi'
 alias dsstore="find . -name '.DS_Store' -type f -delete"
 alias crickets="afplay ~/Documents/crickets.mp3"
 alias bigdump="currentdir=`pwd` && cd ~/Desktop && curl http://www.ozerov.de/bigdump/files/2015/04/bigdump.zip --output bigdump.zip && cd currentdir"
+alias hosts="vim /etc/hosts"
+#alias rails="bundle exec rails"
 #function pisync(){
  # rsync -chavzP --append --stats $1 pi@192.168.1.14:"/mnt/miles/$2"
 #}
 pisync() {
-  rsync -chavzP --append --stats $1 pi@192.168.1.14:"/mnt/media/$2"
+  rsync -chavzP --append --stats $1 pi@192.168.0.27:"/mnt/media/$2"
 }
-
+alias restart_wemo="git commit --allow-empty -m 'push to execute post-receive' && git push pi master"
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 # Add a home bin directory to PATH
@@ -123,6 +126,27 @@ export PATH="$PATH:$HOME/.bin"
 export EDITOR='vim'
 export DISABLE_AUTO_TITLE=true
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# RVM
+# [[ -s "$HOME/.rvm/scripts/rvm"  ]] && . "$HOME/.rvm/scripts/rvm" 
+#
+
+# Pattern89 stuff
+alias qafaktory="FAKTORY_PROVIDER=FAKTORY_URL bundle exec faktory-worker -r . -c 5 -g 'Quantifi-app faktory worker' -v -q constellation_transform -q notification -q quantifi_app"
+alias rsfaktory="FAKTORY_PROVIDER=FAKTORY_URL bundle exec faktory-worker -r . -c 5 -g 'Ruby-services faktory worker' -v -q ruby_services"
+alias psfaktoryf="FLASK_DEBUG=1 FLASK_APP=server.py python3 -m flask start_facebook_worker"
+alias psfaktoryc="FLASK_DEBUG=1 FLASK_APP=server.py python3 -m flask start_constellation_worker"
+alias prod_faktory='ssh -f -N -L 7422:localhost:7420 ubuntu@prod-faktory-1.pattern89.com; echo '\''http://localhost:7422'\'' | pbcopy'
+alias stage_faktory='ssh -f -N -L 7421:localhost:7420 ubuntu@stage-faktory-1.pattern89.com; echo '\''http://localhost:7421'\'' | pbcopy'
+alias qaup="bundle exec rackup"
+alias psup="FLASK_DEBUG=1 FLASK_APP=server.py python3 -m flask run"
+alias rsup="rails s -p 7000"
+alias pssandbox="FLASK_DEBUG=1 FLASK_ENV=SANDBOX FLASK_APP=server.py python3 -m flask run"
+alias rssandbox="RAILS_ENV=sandbox rails s -p 7000"
+
+alias prod_app="ssh prod-app-1.pattern89.com"
+alias stage_app="ssh stage-app-1.pattern89.com"
+alias prod_console="ssh prod-app-workers-1.pattern89.com -t \"cd /var/www/quantifi-app/current; bundle exec rails c\""
+alias keenans_mom="ssh prod-app-workers-1.pattern89.com -t \"sudo service quantifi-slackbot stop; sudo service quantifi-slackbot start; exit;\""

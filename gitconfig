@@ -3,7 +3,7 @@
   clean = git media clean %f
   smudge = git media smudge %f
 [user]
-  name = Mark Reckard
+	name = Mark Reckard
 	email = mark.reckard@gmail.com
   username = marker004
 [filter "hawser"]
@@ -16,6 +16,7 @@
   gpush = git push origin master
   gpull = git pull origin master
 [filter "lfs"]
-  clean = git-lfs clean %f
-  smudge = git-lfs smudge %f
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
   required = true
+	process = git-lfs filter-process

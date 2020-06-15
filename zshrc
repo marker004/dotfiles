@@ -51,9 +51,10 @@ plugins=(wp-cli git)
 
 #  User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/mysql/bin:/$HOME/.meteor"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/mysql/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
+ZSH_DISABLE_COMPFIX=true
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
@@ -127,14 +128,17 @@ export EDITOR='vim'
 export DISABLE_AUTO_TITLE=true
 
 #export NVM_DIR="$HOME/.nvm"
-#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 # RVM
-# [[ -s "$HOME/.rvm/scripts/rvm"  ]] && . "$HOME/.rvm/scripts/rvm" 
+ [[ -s "$HOME/.rvm/scripts/rvm"  ]] && . "$HOME/.rvm/scripts/rvm" 
 #
 
+export PATH="$PATH:$HOME/.pyenv"
+eval "$(pyenv init -)"
+
 # Pattern89 stuff
-alias qafaktory="FAKTORY_PROVIDER=FAKTORY_URL bundle exec faktory-worker -r . -c 5 -g 'Quantifi-app faktory worker' -v -q constellation_transform -q notification -q quantifi_app"
+alias qafaktory="FAKTORY_PROVIDER=FAKTORY_URL bundle exec faktory-worker -r . -c 5 -g 'Quantifi-app faktory worker' -v -q constellation_transform -q notification -q quantifi_app -q indexer -q qa_media_tagging"
 alias rsfaktory="FAKTORY_PROVIDER=FAKTORY_URL bundle exec faktory-worker -r . -c 5 -g 'Ruby-services faktory worker' -v -q ruby_services"
 alias psfaktoryf="FLASK_DEBUG=1 FLASK_APP=server.py python3 -m flask start_facebook_worker"
 alias psfaktoryc="FLASK_DEBUG=1 FLASK_APP=server.py python3 -m flask start_constellation_worker"

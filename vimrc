@@ -194,6 +194,6 @@ let g:ycm_disable_for_files_larger_than_kb = 500
 " Open NERD Tree
 map <F10> :NERDTreeToggle<CR>
 " Prefer vertical splits when diffing
-set diffopt+=vertical
+" set diffopt+=vertical
 
 set hidden
